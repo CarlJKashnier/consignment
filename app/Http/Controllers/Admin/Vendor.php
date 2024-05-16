@@ -20,14 +20,17 @@ class Vendor extends Controller
         return view('admin.vendorManagement.create');
     }
 
-    public function dataForPut() : View
+    public function editView() : View
     {
         return view('admin.vendorManagement.create');
     }
 
     public function put(Request $request) : View
     {
+        //process the update
         return view('admin.vendorManagement.create');
     }
+
+
 
 }
