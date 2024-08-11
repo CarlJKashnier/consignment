@@ -26,6 +26,9 @@
                 </table>
 
             </div>
+            <a href="/vendor/create">
+                <button class="btn btn-blue">Create New Vendor</button>
+            </a>
         </div>
     </div>
 </x-app-layout>
