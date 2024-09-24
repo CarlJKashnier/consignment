@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use App\Models\Vendor as VendorModel;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
+use App\Http\Requests\VendorPutRequest;
 
 class Vendor extends Controller
 {
@@ -30,13 +31,10 @@ class Vendor extends Controller
         return view('admin.vendorManagement.create', ['vendorData' => $vendorData]);
     }
 
-    public function put(Request $request): RedirectResponse
+    public function put(VendorPutRequest $request): RedirectResponse
     {
         //process the update
 
-        //Do clever validation stuff here
-
-        //End doing clever validation stuff.
         $new = 0;
         if(is_int((int)$request->id) && $request->id) {
             $vendorToUpdate = VendorModel::where('id', '=', $request->id)->first();
