@@ -40,7 +40,7 @@ class Vendor extends Controller
             $vendorToUpdate = VendorModel::where('id', '=', $request->id)->first();
         } else {
             $vendorToUpdate = new VendorModel;
-            $vendorToUpdate->owned_by_client_id = Auth::user()->client_id;
+            $vendorToUpdate->owned_by_client_id = $request->user()->client_id;
             $new = 1;
         }
         foreach ($request->request->all() as $key => $value) {
